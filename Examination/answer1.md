@@ -35,7 +35,7 @@ val countries=spark.sql("select distinct country from movie")
 val chinaMoive=spark.sql("select count(*) from movie where country=China")
 val bestMovie=spark.sql("select movie_title,director_name,title_year form movie order by num_voted_users desc limit 3")
 
-
+```
 还有一种直接读入csv格式的方式，读入的数据直接是dataset格式
 ```
 val ds=spark.read.option("header","true").csv("file:/mnt/hgfs/LinuxShareFolder/data/movie_metadata.csv")
@@ -43,4 +43,4 @@ val ds=spark.read.option("header","true").csv("file:/mnt/hgfs/LinuxShareFolder/d
 
 
 
-```
+
